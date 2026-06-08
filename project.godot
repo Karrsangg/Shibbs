@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Shibbs"
+run/main_scene="uid://dxagqqfc08d3a"
+config/features=PackedStringArray("4.6", "Mobile")
+config/icon="res://icon.svg"
+boot_splash/show_image=false
+boot_splash/use_filter=false
+
+[audio]
+
+buses/default_bus_layout="uid://cjywpijdmrqkm"
+
+[autoload]
+
+Music="*uid://c2o1veorb1hu0"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"

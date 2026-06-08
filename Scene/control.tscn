@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://t6h0j3sp2uj7"]
+
+[ext_resource type="Texture2D" uid="uid://c7ybiwj050nu3" path="res://Assets/Control/Photoroom_20260531_142800.png" id="1_l7dqm"]
+[ext_resource type="Texture2D" uid="uid://b0cpti42box4w" path="res://Assets/Control/Photoroom_20260531_143128.png" id="2_m6dxm"]
+[ext_resource type="Texture2D" uid="uid://hxbefmgq77eh" path="res://Assets/Control/Photoroom_20260531_143002.png" id="3_4k4du"]
+
+[node name="Control" type="CanvasLayer" unique_id=1243003601]
+
+[node name="Control" type="Control" parent="." unique_id=886233007]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="TouchScreenButton" parent="Control" unique_id=631863646]
+position = Vector2(-581, -170.99997)
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("1_l7dqm")
+action = "ui_left"
+
+[node name="Right" type="TouchScreenButton" parent="Control" unique_id=1289752279]
+position = Vector2(-479.99994, -180.99998)
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("2_m6dxm")
+action = "ui_right"
+
+[node name="Jump" type="TouchScreenButton" parent="Control" unique_id=1821894724]
+position = Vector2(387, -177)
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("3_4k4du")
+action = "ui_accept"
