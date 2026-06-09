@@ -1,2 +1,2 @@
 # Shibbs
-* A Platformer game, trust
+* A Platformer game, trust me
