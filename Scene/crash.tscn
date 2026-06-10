@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dks0k2u71jd5r"]
+
+[ext_resource type="Texture2D" uid="uid://ywvw5ds7oren" path="res://Assets/sprites/slime_green.png" id="1_bjnby"]
+[ext_resource type="Script" uid="uid://bhmutgyp6xdk7" path="res://Script/crash.gd" id="1_d1mu6"]
+[ext_resource type="Script" uid="uid://b3ni4fblrpxc8" path="res://Script/collision.gd" id="2_umrym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umrym"]
+atlas = ExtResource("1_bjnby")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1mu6"]
+atlas = ExtResource("1_bjnby")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa1bk"]
+atlas = ExtResource("1_bjnby")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqpah"]
+atlas = ExtResource("1_bjnby")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2sdq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umrym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1mu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa1bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqpah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n48t8"]
+size = Vector2(10, 11)
+
+[node name="Crash" type="Node2D" unique_id=350921001]
+script = ExtResource("1_d1mu6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329543243]
+sprite_frames = SubResource("SpriteFrames_2sdq0")
+autoplay = "default"
+
+[node name="Collision" type="Area2D" parent="." unique_id=2042131975]
+script = ExtResource("2_umrym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision" unique_id=412947426]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_n48t8")
+
+[node name="Timer" type="Timer" parent="Collision" unique_id=1796531616]
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=304449477]
+position = Vector2(0, 8)
+target_position = Vector2(6, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1318497656]
+position = Vector2(0, 8)
+target_position = Vector2(-6, 0)
+
+[connection signal="body_entered" from="Collision" to="Collision" method="_on_body_entered"]
+[connection signal="timeout" from="Collision/Timer" to="Collision" method="_on_timer_timeout"]
