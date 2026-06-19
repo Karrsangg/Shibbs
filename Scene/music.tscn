@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://c2o1veorb1hu0"]
-
-[ext_resource type="AudioStream" uid="uid://bnvuss5hokbev" path="res://Assets/music/time_for_adventure.mp3" id="1_kt2l4"]
-
-[node name="Music" type="AudioStreamPlayer2D" unique_id=2106119299]
-stream = ExtResource("1_kt2l4")
-autoplay = true
-max_distance = 99999.0
-bus = &"Music"
